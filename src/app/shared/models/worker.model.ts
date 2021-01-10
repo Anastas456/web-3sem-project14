@@ -1,0 +1,21 @@
+export interface MyWorker{
+    name: string;
+    surname: string;
+    type: number;
+    id?:number;
+    phone:string;
+}
+
+export enum MyWorkerType  {
+    programmer,
+    designer,
+    copywriter,
+    manager
+}
+
+// export let myWorkerDatabase: MyWorker[]=[
+//     {id:1, name:'Ivan', surname: 'Ivanov', type:0, phone:'+7 (123) 456-78-90'},
+//     {id:2, name:'Petr', surname: 'Petrov', type:1, phone:'+7 (111) 111-11-11'},
+//     {id:3, name:'Sidr', surname: 'Sidorov', type:2, phone:'+7 (222) 222-22-22'},
+//     {id:4, name:'Vasiliy', surname: 'Vasilev', type:3, phone:'+7 (333) 333-33-33'}
+// ]

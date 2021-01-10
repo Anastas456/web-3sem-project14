@@ -1,0 +1,40 @@
+<form [formGroup]="workerForm" (ngSubmit)="submit()">
+    <div class="row mb-3">
+        <div class="col-12">
+            <h5>Добавить сотрудника</h5>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" 
+            placeholder="Имя" formControlName="name"> 
+            <div class="alert alert-danger" 
+            *ngIf="workerForm.controls['name'].invalid && workerForm.controls['name'].touched">
+                Не указано имя
+            </div>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Фамилия" formControlName="surname">
+            <div class="alert alert-danger" *ngIf="workerForm.controls['surname'].invalid && workerForm.controls['surname'].touched">
+                Не указана фамилия
+            </div>
+        </div>
+        <div class="col">
+            <input type="phone" class="form-control" placeholder="Телефон" formControlName="phone" [textMask]="{mask: mask}">  
+            <div class="alert alert-danger" *ngIf="workerForm.controls['phone'].invalid && workerForm.controls['phone'].touched">
+                Не указан телефон
+            </div>
+        </div>
+        <div class="col">
+            <select class="custom-select" formControlName="type">
+                <option [ngValue]="myWorkerType.programmer">Программист</option>
+                <option [ngValue]="myWorkerType.designer">Дизайнер</option>
+                <option [ngValue]="myWorkerType.copywriter">Рекламщик</option>
+                <option [ngValue]="myWorkerType.manager">Менеджер</option>
+            </select>
+        </div>
+        <div class="col">
+            <button class="btn btn-outline-primary btn-sm mt-2" [disabled]="workerForm.invalid" >Добавить</button>
+        </div>
+        
+    </div>
+    </form>
+    
